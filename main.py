@@ -17,7 +17,7 @@ def main():
     print("--- End report ---")
 
 
-def get_num_words(text):
+def get_num_words(text): # Gets the number of words in the text document
     words = text.split()
     return len(words)
 
@@ -26,7 +26,7 @@ def sort_on(d):
     return d["num"]
 
 
-def chars_dict_to_sorted_list(num_chars_dict):
+def chars_dict_to_sorted_list(num_chars_dict): # Given the character dictionary from the function below, it creates a sorted list of the characters from greatest to least in terms of count
     sorted_list = []
     for ch in num_chars_dict:
         sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
@@ -34,7 +34,7 @@ def chars_dict_to_sorted_list(num_chars_dict):
     return sorted_list
 
 
-def get_chars_dict(text):
+def get_chars_dict(text): # Converts the text in the document to lower case and keeps track of number of occurences that char appears in the text and returns a dictionary
     chars = {}
     for c in text:
         lowered = c.lower()
@@ -45,7 +45,7 @@ def get_chars_dict(text):
     return chars
 
 
-def get_book_text(path):
+def get_book_text(path): # Takes the file path as a parameter and returns the file contents 
     with open(path) as f:
         return f.read()
 
